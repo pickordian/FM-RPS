@@ -1,0 +1,252 @@
+.game {
+  width: min(50rem, 80%);
+  margin-top: 1rem;
+  flex: auto;
+  display: flex;
+  justify-content: center;
+}
+.first-state {
+  width: 329px;
+  height: 313px;
+  position: relative;
+  align-self: center;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22329%22%20height%3D%22313%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%2215%22%20d%3D%22M164.5%209.27L9.26%20122.06l59.296%20182.495h191.888L319.74%20122.06%20164.5%209.271z%22%20opacity%3D%22.2%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  .rock {
+    top: 100%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }
+  .paper {
+    top: 40%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+  .scissors {
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .lizard {
+    top: 100%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  .spock {
+    top: 40%;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+.second-state {
+ 
+  width: 100%;
+  color: hsl(217, 16%, 95%);
+  text-align: center;
+  padding: 0 0 30% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:center;
+  flex-wrap: wrap;
+  & > div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    gap: 3rem;
+    align-items: center;
+  }
+  .choice {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    
+  }
+  .result-bubble,
+    .result-bubble::after,
+    .result-bubble::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 999rem;
+      box-sizing: border-box;
+    }
+    .result-bubble {
+      width: 17rem;
+      height: 17rem;
+      border: 2.5rem solid rgba(240, 242, 244, 0.075);
+      &::before {
+        content: "";
+        width: 23rem;
+        height: 23rem;
+        border: 3rem solid rgba(240, 242, 244, 0.05);
+      }
+      &::after {
+        content: "";
+        width: 31rem;
+        height: 31rem;
+        border: 4rem solid rgba(240, 242, 244, 0.025);
+      }
+    }
+  .result {
+    position: absolute;
+    top:60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: result-scale 500ms 1 forwards;
+    gap: 1rem;
+    text-transform: uppercase;
+    span {
+      font-size: 3rem;
+    }
+    button {
+      cursor: pointer;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      color: hsl(229, 25%, 31%);
+      padding: 0.75rem 1.25rem;
+    }
+    .none {
+      display: none;
+    }
+  }
+
+  @keyframes result-scale {
+    0% {
+      transform: scale(80%) translate(-62.5%, -62.5%);
+    }
+    100% {
+      transform: scale(100%) translate(-50%, -50%);
+    }
+  }
+}
+.choice {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  border-radius: 999rem;
+  border: 1rem solid;
+  color: transparent;
+  background-color: hsl(217, 16%, 95%);
+  box-shadow: inset 0 0.4rem 0 -0.1rem hsl(217, 16%, 75%);
+  cursor: pointer;
+  &::after {
+    content: "";
+    height: 45%;
+    width: 45%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 999rem;
+  }
+}
+.rock {
+  border-color: hsl(349, 70%, 56%);
+  &::after {
+    background-image: url("../../assets/images/icon-rock.svg");
+  }
+  &:active {
+    border-color: hsl(349, 71%, 52%);
+  }
+}
+.paper {
+  border-color: hsl(230, 89%, 65%);
+  &::after {
+    background-image: url("../../assets/images/icon-paper.svg");
+  }
+  &:active {
+    border-color: hsl(230, 89%, 62%);
+  }
+}
+.scissors {
+  border-color: hsl(39, 89%, 53%);
+  &::after {
+    background-image: url("../../assets/images/icon-scissors.svg");
+  }
+  &:active {
+    border-color: hsl(40, 84%, 49%);
+  }
+}
+.spock {
+  border-color: hsl(189, 58%, 57%);
+  &::after {
+    transform: translate(-40%, -50%);
+    background-image: url("../../assets/images/icon-spock.svg");
+  }
+  &:active {
+    border-color: hsl(189, 59%, 53%);
+  }
+}
+.lizard {
+  border-color: hsl(261, 72%, 63%);
+  &::after {
+    background-image: url("../../assets/images/icon-lizard.svg");
+  }
+  &:active {
+    border-color: hsl(261, 73%, 60%);
+  }
+}
+@media (width < 35rem) {
+  .game {
+    width: 100%;
+  }
+  .first-state {
+    width: 219px;
+    height: 209px;
+  }
+  .second-state {
+    height: 80%;
+    & > div > span{
+      font-size: 1.5rem;
+    }
+    .choice {
+      width: 6rem;
+      height: 6rem;
+    }
+    .result {
+      position: static;  
+      transform: none;
+      span {
+        font-size: 2rem;
+      }
+      button {
+        font-size: 1rem;
+      }
+    }
+    @keyframes result-scale {
+      0% {
+        transform: scale(80%);
+      }
+      100% {
+        transform: scale(100%);
+      }
+    }
+    .result-bubble{
+      width: 11rem;
+      height: 11rem;
+      &::before{
+        width: 17rem;
+        height: 17rem;
+      }
+      &::after{
+        width: 25rem;
+        height: 25rem;
+      }
+
+    }
+
+  }
+  .choice {
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.5rem;
+  }
+}
