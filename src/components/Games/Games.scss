@@ -75,6 +75,7 @@
       box-sizing: border-box;
     }
     .result-bubble {
+      
       width: 17rem;
       height: 17rem;
       border: 2.5rem solid rgba(240, 242, 244, 0.075);
@@ -232,13 +233,16 @@
     .result-bubble{
       width: 11rem;
       height: 11rem;
+    
       &::before{
         width: 17rem;
         height: 17rem;
+     
       }
       &::after{
         width: 25rem;
         height: 25rem;
+     
       }
 
     }

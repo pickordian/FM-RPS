@@ -24,6 +24,7 @@ body {
   align-items: center;
   font-family: Barlow Semi Condensed;
   box-sizing: border-box;
+  overflow: hidden;
   .rule-btn {
     font-size: 1.5rem;
     border-radius: 0.5rem;
