@@ -56,7 +56,7 @@ function Games({ setScore }: Props) {
     }, 300);
   };
   const houseShuffle = (): Promise<string> => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       let index: number = 0;
       // set randomize house choice UI
       const houseTimer = setInterval(() => {
