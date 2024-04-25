@@ -44,7 +44,7 @@
   width: 100%;
   color: hsl(217, 16%, 95%);
   text-align: center;
-  padding: 0 0 30% 0;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -111,6 +111,8 @@
       border-radius: 0.5rem;
       color: hsl(229, 25%, 31%);
       padding: 0.75rem 1.25rem;
+      border: none;
+      
     }
     .none {
       display: none;
