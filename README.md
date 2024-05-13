@@ -1,6 +1,6 @@
 # Rock Paper Scissors Game
 
-This project is a implementation of the classic game Rock Paper Scissors Lizard Spock built with  React.js. This interactive game allows users to play against the computer in a web browser.
+This project is an implementation of the classic game Rock Paper Scissors Lizard Spock built with  React.js. This interactive game allows users to play against the computer in a web browser.
 
 ## Prerequisites
 
